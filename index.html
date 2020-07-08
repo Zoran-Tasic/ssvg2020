@@ -5,29 +5,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Zvanicni sajt Srednje skole MIloje Vasic Veliko Gradiste">
+    <meta name="description" content="Zvanicni sajt Srednje skole Miloje Vasic Veliko Gradiste">
     <meta name="keywords" content="Srednja skola, Miloje, Vasic, Veliko Gradiste, gimnazija">
     <meta name="author" content="Zoran Tašić">
+    <link rel="icon" type="image/ico" href="favicon.ico" />
     <title>
-        Средња школа "МИлоје Васић" Велико Градиште
+        Средња школа "Милоје Васић" Велико Градиште
     </title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script type="text/javascript">
-    </script>
 </head>
 
 <body>
-    <header>
+    <header class="zaglavlje">
+        <h1>Средња школа "Милоје Васић" Велико Градиште</h1>
+
+        <div class="mySlides fade">
+            <img src="img/head1.jpg" style="width:100%">
+            <div class="text">Средња школа "Милоје Васић"</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="img/head2.jpg" style="width:100%">
+            <div class="text">Главни хол</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="img/head3.jpg" style="width:100%">
+            <div class="text">Монографија "Великоградиштанска гимназија 1879-2019"</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="img/head4.jpg" style="width:100%">
+            <div class="text">Светско првенство - одбојка - бронзана медаља</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="img/head5.jpg" style="width:100%">
+            <div class="text">Општинска награда општине Велико Градиште</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="img/head6.jpg" style="width:100%">
+            <div class="text">Свечана додела диплома</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <br>
+
+        <div style="text-align:center">
+            <span class="kruzic" onclick="currentSlide(1)"></span>
+            <span class="kruzic" onclick="currentSlide(2)"></span>
+            <span class="kruzic" onclick="currentSlide(3)"></span>
+            <span class="kruzic" onclick="currentSlide(4)"></span>
+            <span class="kruzic" onclick="currentSlide(5)"></span>
+            <span class="kruzic" onclick="currentSlide(6)"></span>
+        </div>
+
         <nav>
 
         </nav>
     </header>
     <main>
-
+        <h1>TEST</h1>
     </main>
     <footer>
 
     </footer>
+    <script>
+        let slideIndex = 1; //aktivna prva slika
+        showSlides(slideIndex); //prikazi aktivnu sliku
+
+        function plusSlides(n) { // aktivira prikaz slike klikom na strelice
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) { //aktivira prikaz slike klikom na kruzic
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("kruzic");
+            if (n > slides.length) { //vraca index slike na pocetak
+                slideIndex = 1
+            }
+            if (n < 1) { //vraca index slike na kraj
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
 </body>
 
 </html>
