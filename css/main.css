@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper {
+    width 90%;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 1.8em;
+}
+
+nav ul li:hover {
+    cursor: pointer;
+}
+
+@media (max-width:400px) {
+    #wrapper {
+        width: 100%;
+    }
+}
